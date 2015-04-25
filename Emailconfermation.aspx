@@ -16,6 +16,10 @@
     <div>    
         <asp:Button ID="btnmain" runat="server" OnClick="Button1_Click" Text="Go to the Main Page" />
     
+        <br />
+        <br />
+        <asp:Label ID="lbconfermation" runat="server"></asp:Label>
+    
     </div>
     </form>
 </body>

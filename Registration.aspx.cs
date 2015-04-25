@@ -98,20 +98,20 @@ public partial class Registration : System.Web.UI.Page
     {
 
             //  string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
-        /*    string activationCode = Guid.NewGuid().ToString();
+          string activationCode = Guid.NewGuid().ToString();
           using (SqlConnection con = new SqlConnection(source))
            {
 
                System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
                cmd.CommandType = System.Data.CommandType.Text;
-               cmd.CommandText = ("UPDATE website1 SET status='true' WHERE EmailAdress=" + "'" + txtEmail.Value + "'and Password='" + txtPassword.Value + "'");
+               cmd.CommandText = ("UPDATE website1 SET status='true' WHERE EmailAdress=" + "'" + txtEmail.Text + "'and Password='" + txtPassword.Text + "'");
                cmd.Connection = con;
                con.Open();
                cmd.ExecuteNonQuery();
                con.Close();
                // using (SqlCommand cmd = new SqlCommand("INSERT INTO website1 VALUES(@UserId, @ActivationCode)"))
 
-           }*/
+           }
         using (MailMessage mm = new MailMessage("sarwanpasha@gmail.com", txtEmail.Text))
             {
                 mm.Subject = "Account Activation";

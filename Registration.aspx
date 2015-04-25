@@ -64,6 +64,11 @@
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </p>
         <p>
+            
+<a href="http://localhost:1485/Default.aspx">return to login</a>
+
+            &nbsp;</p>
+        <p>
             <asp:Label ID="lbemail" runat="server"></asp:Label>
         </p>
    

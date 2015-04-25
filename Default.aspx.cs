@@ -67,20 +67,21 @@ public partial class _Default : System.Web.UI.Page
 
 
         btnpost.Font.Size = FontUnit.Medium;
-        btnout.Font.Size = FontUnit.Medium;
-        Button1.Font.Size = FontUnit.Medium;
-        Offers.Font.Size = FontUnit.Medium;
-        Button9.Font.Size = FontUnit.Medium;
-        Button10.Font.Size = FontUnit.Medium;
-        btncontact.Font.Size = FontUnit.Medium;
-        btnchat.Font.Size = FontUnit.Medium;
-        Button2.Font.Size = FontUnit.Medium;
+       btnout.Font.Size = FontUnit.Medium;
+      Button1.Font.Size = FontUnit.Medium;
+      Offers.Font.Size = FontUnit.Medium;
+      Button9.Font.Size = FontUnit.Medium;
+      Button10.Font.Size = FontUnit.Medium;
+         btncontact.Font.Size = FontUnit.Medium;
+      btnchat.Font.Size = FontUnit.Medium;
+          Button2.Font.Size = FontUnit.Medium;
         btntwitter.Font.Size = FontUnit.Medium;
-        btngoogle.Font.Size = FontUnit.Medium;
+         btngoogle.Font.Size = FontUnit.Medium;
         Button6.Font.Size = FontUnit.Medium;
-        Button7.Font.Size = FontUnit.Medium;
-        btnsend.Font.Size = FontUnit.Medium;
-        btnLocation.Font.Size = FontUnit.Medium;
+       Button7.Font.Size = FontUnit.Medium;
+       btnsend.Font.Size = FontUnit.Medium;
+      btnLocation.Font.Size = FontUnit.Medium;
+      btnfb.Font.Size = FontUnit.Medium;
 
         fromemail.ForeColor = System.Drawing.Color.Black;
         fromemail.Font.Size = FontUnit.Medium;
