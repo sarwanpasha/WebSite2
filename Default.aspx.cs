@@ -95,10 +95,28 @@ public partial class _Default : System.Web.UI.Page
         TBNAME.Font.Size = FontUnit.Medium;
         TBNUMBER.ForeColor = System.Drawing.Color.Black;
         TBNUMBER.Font.Size = FontUnit.Medium;
+        btnClearSesson.Visible = false;
+        siteVisited();
     //  fromcomments.Attributes.Add("onfocus", "this.select();");
         // string NAME = Response.QueryString.GetValue(" NAME ");
         name();
      }
+    public void siteVisited()
+    {
+        try
+        {
+            int UserCount = Convert.ToInt32(Application["OnlineUsers"]);
+            lblSiteVisited.Text = UserCount.ToString();
+            lblOnlineUsers.Text = Session["start"].ToString();
+
+          //  lblSiteVisited.Text = "No of times my site visited=" + Application["SiteVisitedCounter"].ToString();
+          //  lblOnlineUsers.Text = "No of users online on my site=" + Application["OnlineUserCounter"].ToString();
+        }
+        catch (Exception ex)
+        {
+            LBST.Text = "Sorry!! " + ex.Message;
+        }
+    }
     public void name()
     {
         try
@@ -309,5 +327,9 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("https://play.google.com/store?hl=en");
     }
- 
+
+    protected void btnClearSesson_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+    }
 }
