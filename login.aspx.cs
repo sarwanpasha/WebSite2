@@ -15,7 +15,10 @@ public partial class login : System.Web.UI.Page
     string source = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\USERS\PASHA\DOCUMENTS\WEBSITE.MDF;Integrated Security=True";
     protected void Page_Load(object sender, EventArgs e)
     {
- 
+        Lb6.Font.Size = FontUnit.XLarge;
+        Lb5.Font.Size = FontUnit.XLarge;
+        Lb7.Font.Size = FontUnit.XLarge;
+
 
     }
     protected void btnsignup_Click(object sender, EventArgs e)
@@ -62,8 +65,6 @@ public partial class login : System.Web.UI.Page
             {
                 NAME = tbusername.Text;
                 lbstatus.Text = "Login sucess";
-              //  Server.Transfer("Default.aspx", true);
-              //  Server.Transfer("Default.aspx" + NAME);
 
                 bool databasecheck = check();
                 if(databasecheck==true){
@@ -71,6 +72,7 @@ public partial class login : System.Web.UI.Page
                     Server.Transfer("Default.aspx", true);
                 }
                 else{
+                    
                     lbstatus.Text = "Please Activate Your account to login!";
                 }
 

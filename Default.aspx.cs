@@ -11,6 +11,7 @@ using System.Data;
 using System.IO;
 public partial class _Default : System.Web.UI.Page
 {
+    public bool log = true;
     String toAddress, fromAddress, subject, body, fromPassword, comments,currentLocation;
     bool techstatus = true;
     bool confermation=false;
@@ -19,6 +20,8 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        //logIn.Visible = false;
+
         lbviews.ForeColor = System.Drawing.Color.Black;
         LbArrival.ForeColor = System.Drawing.Color.White;
         LbJoin.ForeColor = System.Drawing.Color.White;
@@ -27,6 +30,7 @@ public partial class _Default : System.Web.UI.Page
         Lb4.ForeColor = System.Drawing.Color.White;
         Lb9.ForeColor = System.Drawing.Color.White;
         lbwho.ForeColor = System.Drawing.Color.White;
+        commentdisplay.ForeColor = System.Drawing.Color.Red;
      //   lbviews.BackColor = System.Drawing.Color.White; 
 
       //  lbemail.ForeColor = System.Drawing.Color.Green; 
@@ -52,6 +56,7 @@ public partial class _Default : System.Web.UI.Page
         LbAbout.Font.Size = FontUnit.Large;
         lbcopy.Font.Size = FontUnit.Large;
         lbarrival1.Font.Size = FontUnit.Large;
+        commentdisplay.Font.Size = FontUnit.Large;
 
 
         lblAnything.Font.Size = FontUnit.XLarge;
@@ -68,8 +73,7 @@ public partial class _Default : System.Web.UI.Page
 
         btnpost.Font.Size = FontUnit.Medium;
        btnout.Font.Size = FontUnit.Medium;
-      Button1.Font.Size = FontUnit.Medium;
-      Offers.Font.Size = FontUnit.Medium;
+       Offers.Font.Size = FontUnit.Medium;
       Button9.Font.Size = FontUnit.Medium;
       Button10.Font.Size = FontUnit.Medium;
          btncontact.Font.Size = FontUnit.Medium;
@@ -102,7 +106,7 @@ public partial class _Default : System.Web.UI.Page
             lbname.ForeColor = System.Drawing.Color.Green;////COLOUR
             lbname.Text = Session["name"].ToString();
             Session.Remove("name");
-            Button1.Visible = false;
+           // Button1.Visible = false;
             btnout.Visible = true;
         }
         catch(Exception ex){
@@ -114,14 +118,7 @@ public partial class _Default : System.Web.UI.Page
        // Response.Redirect("http://www.microsoft.com/gohere/look.htm");
         Server.Transfer("Registration.aspx", true);
     }
-  
-
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Server.Transfer("login.aspx", true);
-    }
-  
+ 
     protected void btnNewTab_Click(object sender, EventArgs e)
     {
         Response.Redirect("https://www.facebook.com/pages/Emergency-Rescue-app/684092021697287?ref=ts&fref=ts");
@@ -129,6 +126,12 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnsend_Click(object sender, EventArgs e)
     {
+        if (fromemail.Text == String.Empty || TBNAME.Text == String.Empty || TBNUMBER.Text == String.Empty || fromcomments.Text == String.Empty)
+        {
+            commentdisplay.Text = "Please Fill All Fields ";
+        }
+        else
+        {
         try
         {
 
@@ -150,6 +153,7 @@ public partial class _Default : System.Web.UI.Page
             commentdisplay.ForeColor = System.Drawing.Color.Red;////COLOUR
             commentdisplay.Text = "You Failed! "+ex.Message;
 
+        }
         }
     }
     protected void SendMail()

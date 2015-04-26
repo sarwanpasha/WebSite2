@@ -1,19 +1,23 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ChatDefault.aspx.cs" Inherits="ChatDefault" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="About" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-              <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-<body style="height: 476px">
-    <form id="form1" runat="server" style="background-image:url('images/image_9.jpg'); height: 744px;">
-                <nav class="navbar navbar-inverse navbar-fixed-top">
+<body>
+       <p>
+           <br />
+       </p>
+       <p>
+           &nbsp;</p>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
     <a class="navbar-brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Emergency Rescue App</a>
@@ -30,25 +34,30 @@
     </div>
   </div>
 </nav>
-    <div>
-    
-        <br />
-        <br />
-        <br />
-        <br />
-    
-        Channel&nbsp;
-        <asp:TextBox ID="tbchannel" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        Username&nbsp;
-        <asp:TextBox ID="tbusername" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        <br />
-        <asp:Button ID="btnjoin" runat="server" OnClick="btnjoin_Click" Text="Joinchat" BorderStyle="Dotted" />
-    
+<form id="form1" runat="server">
+           <div>
+               <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact.</h2>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can Contact us on Facebook, Twitter, Google+ or on Mobile.</h3>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Department of CS&IT, UET Peshawar</p>
+                
+                <div class="container body-content"> 
+                                         <address>
+        <strong>Facebook:</strong>   <a href="https://www.facebook.com/pages/Emergency-Rescue-app/684092021697287?fref=ts">Click here to follow on facebook</a><br />
+        <strong>Mail:</strong> <a href="">sarwanpasha@gmail.com</a>
+    </address>
+            <hr />
+
+                    <footer>
+                        <p>&copy; <%: DateTime.Now.Year %> - Emergency Rescue App</p>
+            </footer>
+        </div>
+ 
     </div>
     </form>
+       <p>
+           &nbsp;</p>
+       <p>
+           &nbsp;</p>
+ 
 </body>
 </html>

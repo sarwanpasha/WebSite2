@@ -1,19 +1,23 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ChatDefault.aspx.cs" Inherits="ChatDefault" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="About" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-              <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-<body style="height: 476px">
-    <form id="form1" runat="server" style="background-image:url('images/image_9.jpg'); height: 744px;">
-                <nav class="navbar navbar-inverse navbar-fixed-top">
+<body>
+       <p>
+           <br />
+       </p>
+       <p>
+           &nbsp;</p>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
     <a class="navbar-brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Emergency Rescue App</a>
@@ -30,24 +34,18 @@
     </div>
   </div>
 </nav>
-    <div>
-    
-        <br />
-        <br />
-        <br />
-        <br />
-    
-        Channel&nbsp;
-        <asp:TextBox ID="tbchannel" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        Username&nbsp;
-        <asp:TextBox ID="tbusername" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        <br />
-        <asp:Button ID="btnjoin" runat="server" OnClick="btnjoin_Click" Text="Joinchat" BorderStyle="Dotted" />
-    
+<form id="form1" runat="server">
+           <div>
+               <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About.</h2>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The basic Purpose of the App is to reduce the arrival time of Ambulences.</h3>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; User just need to Tap on the screen of application, The Rescue team will arrive at their doorstep as soon as possible.</p>
+                <div class="container body-content"> 
+            <hr />
+                    <footer>
+                        <p>&copy; <%: DateTime.Now.Year %> - Emergency Rescue App</p>
+            </footer>
+        </div>
+ 
     </div>
     </form>
 </body>
