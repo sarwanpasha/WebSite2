@@ -40,59 +40,7 @@ public partial class Registration : System.Web.UI.Page
     }
  
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Label1.Text = "Please wait...";
-        int id = 1;
-        userName = txtName.Text;
-        lastName = txtLastName.Text;
-        email = txtEmail.Text;
-        city = txtCity.Text;
-        password = txtPassword.Text;
-        repeatpassword = txtRepeatPassword.Text;
-        if (userName == String.Empty || lastName == String.Empty || password == String.Empty || repeatpassword == String.Empty || email == String.Empty || city == String.Empty)
-        {
-            Label1.ForeColor = System.Drawing.Color.Red;
-            Label1.Text = "Please Fill All Fields";
-        }
-        
-        else
-        {
-            if (password != repeatpassword)
-            {
-                Label1.ForeColor = System.Drawing.Color.Red;////COLOUR
-                Label1.Text = "Password Doesnot Match!";
-            }
-
-            else
-            {
-                SqlConnection myConnection = new SqlConnection(source);
-                try
-                {
-                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = ("insert into website1 values('" + id + "','" + userName + "','" + lastName + "','" + email + "','" + city + "','" + password + "','" + repeatpassword + "','" + status + "');");
-                    cmd.Connection = myConnection;
-                    myConnection.Open();
-                    cmd.ExecuteNonQuery();
-                    myConnection.Close(); 
-
-                    Label1.ForeColor = System.Drawing.Color.Green;////COLOUR
-                    Label1.Text = "Records are Submitted Successfully!"+" \n  Confermation Email has been sended to you!";
-                   
-                   // SendMail();  
-                SendActivationEmail(1);
-
-                   lbemail.Text = "Success Pasha!";
-                }
-                catch (SqlException ex)
-                {
-                    Label1.ForeColor = System.Drawing.Color.Red;
-                    Label1.Text = "You failed! " + ex.Message;
-                }
-            }
-        }
-    }
+ 
 
     private void SendActivationEmail(int userId)
     {
@@ -136,5 +84,58 @@ public partial class Registration : System.Web.UI.Page
     protected void btnsubmit_Click(object sender, EventArgs e)
     {
 
+    }
+    protected void btnre_Click(object sender, ImageClickEventArgs e)
+    {
+        Label1.Text = "Please wait...";
+        int id = 1;
+        userName = txtName.Text;
+        lastName = txtLastName.Text;
+        email = txtEmail.Text;
+        city = txtCity.Text;
+        password = txtPassword.Text;
+        repeatpassword = txtRepeatPassword.Text;
+        if (userName == String.Empty || lastName == String.Empty || password == String.Empty || repeatpassword == String.Empty || email == String.Empty || city == String.Empty)
+        {
+            Label1.ForeColor = System.Drawing.Color.Red;
+            Label1.Text = "Please Fill All Fields";
+        }
+
+        else
+        {
+            if (password != repeatpassword)
+            {
+                Label1.ForeColor = System.Drawing.Color.Red;////COLOUR
+                Label1.Text = "Password Doesnot Match!";
+            }
+
+            else
+            {
+                SqlConnection myConnection = new SqlConnection(source);
+                try
+                {
+                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = ("insert into website1 values('" + id + "','" + userName + "','" + lastName + "','" + email + "','" + city + "','" + password + "','" + repeatpassword + "','" + status + "');");
+                    cmd.Connection = myConnection;
+                    myConnection.Open();
+                    cmd.ExecuteNonQuery();
+                    myConnection.Close();
+
+                    Label1.ForeColor = System.Drawing.Color.Green;////COLOUR
+                    Label1.Text = "Records are Submitted Successfully!" + " \n  Confermation Email has been sended to you!";
+
+                    // SendMail();  
+                    SendActivationEmail(1);
+
+                    lbemail.Text = "Success Pasha!";
+                }
+                catch (SqlException ex)
+                {
+                    Label1.ForeColor = System.Drawing.Color.Red;
+                    Label1.Text = "You failed! " + ex.Message;
+                }
+            }
+        }
     }
 }

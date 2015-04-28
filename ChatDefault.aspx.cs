@@ -9,7 +9,8 @@ public partial class ChatDefault : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Lb1.Font.Size = FontUnit.XLarge;
+        Lb2.Font.Size = FontUnit.XLarge;
     }
  
     protected void btnjoin_Click(object sender, EventArgs e)

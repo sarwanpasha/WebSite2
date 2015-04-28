@@ -31,6 +31,7 @@ background-color:grey;
         }
     </style>
 </head>
+ 
 <body style="background-image:url(images/image_7.1.jpg)">
 
 
@@ -129,10 +130,11 @@ background-color:grey;
               runat="server" Text="Chat Room" class="buttonclass" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
            <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
 
         <asp:Label ID="Lb9" runat="server" 
-  Text="............................................................................................................................................................................................."></asp:Label>    
+             Text="................................................................................................................................................................................................"></asp:Label> 
+    
                 </p>
            <p>
                &nbsp;</p>
@@ -144,34 +146,55 @@ background-color:grey;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="LbArrival" runat="server" Text="Now Ambulence Will Arrive Earlier Then Pizza!"></asp:Label>
             </p>
-                <p style="margin-left: 40px">
+                    <p>
 
         <asp:Label ID="Lb3" runat="server" 
-  Text="..........................................................................................................................................................................................."></asp:Label> 
-    
-            </p>
+  Text="................................................................................................................................................................................................"></asp:Label>    
+                    </p>
                 <div style="margin-left: 320px">
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" Text="Join Us On GooglePlay" OnClick="Button2_Click" onclientclick="document.forms[1].target ='_blank';"  class="buttonclass"/>
-            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <asp:ImageButton ID="googleplay" runat="Server" 
+       AlternateText="" ImageUrl="~/images/googleplay.logo.png"  
+       OnClick="btngoogleplay_Click" Height="62px" Width="229px" onclientclick="document.forms[0].target ='_blank';"  />
+                     <br />
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<asp:Label ID="LbJoin" runat="server" Text="Join Us At"></asp:Label>
 &nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnfb" onclick="btnNewTab_Click" 
-onclientclick="document.forms[0].target ='_blank';" 
-runat="server" text="Facebook" class="buttonclass"  />
-            &nbsp;&nbsp;
-            <asp:Button ID="btntwitter"  OnClick="btntwitter_Click" onclientclick="document.forms[0].target ='_blank';" 
-                runat="server" Text="Twitter" class="buttonclass" />
-&nbsp;&nbsp;
-            <asp:Button ID="btngoogle"  OnClick="btngoogle_Click" onclientclick="document.forms[0].target ='_blank';" 
-                runat="server" Text="Google+"  class="buttonclass" />
-            &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button6" runat="server" Text="Instagram" class="buttonclass" />
-            &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button7" runat="server" Text="LinkedIN" class="buttonclass"/>
-        </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+        <asp:ImageButton ID="btnfacebook" runat="Server" 
+       AlternateText="Click to lock record" ImageUrl="~/images/facebook.logo.png"  
+       OnClick="btnLock_Click" Height="62px" Width="71px" onclientclick="document.forms[0].target ='_blank';"  />
+
+                            &nbsp;
+
+                            &nbsp;&nbsp;
+
+                            <asp:ImageButton ID="btntweet" runat="Server" 
+       AlternateText="Click to lock record" ImageUrl="~/images/twitter.logo.png"  
+       OnClick="btntreet_Click" Height="62px" Width="71px" onclientclick="document.forms[0].target ='_blank';"  />
+
+                                               &nbsp;
+
+                                               &nbsp;&nbsp;
+
+                                               <asp:ImageButton ID="btngoogleplus" runat="Server" 
+       AlternateText="" ImageUrl="~/images/google.logo.png"  
+       OnClick="btngoogleplus_Click" Height="62px" Width="71px" onclientclick="document.forms[0].target ='_blank';"  />
+
+                                                                   &nbsp;&nbsp;&nbsp;
+
+                                                                   <asp:ImageButton ID="btninstagram" runat="Server" 
+       AlternateText="" ImageUrl="~/images/instagram.logo.png"  
+       OnClick="btninstagram_Click" Height="62px" Width="71px" onclientclick="document.forms[0].target ='_blank';"  />
+
+                                                                   &nbsp;&nbsp;&nbsp;
+
+                                                                   <asp:ImageButton ID="btnlinkedin" runat="Server" 
+       AlternateText="" ImageUrl="~/images/linkedin.logo.png"  
+       OnClick="btnlinkedin_Click" Height="62px" Width="71px" onclientclick="document.forms[0].target ='_blank';"  />
+
+                </div>
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -186,10 +209,11 @@ runat="server" text="Facebook" class="buttonclass"  />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
         <br />
         <div style="background-image:url(images/contact.jpg)">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Lb7" runat="server" 
-  Text="..........................................................................................................................................................................................."></asp:Label>            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
             <asp:Label ID="lbviews" runat="server" Text="Contact Us!!"></asp:Label>
+            &nbsp;&nbsp;<br />
+            <asp:Label ID="Lb7" runat="server" 
+  Text="................................................................................................................................................................................................"></asp:Label>            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
             <br />
         <br />
             
@@ -209,7 +233,9 @@ runat="server" text="Facebook" class="buttonclass"  />
         <asp:TextBox ID="fromcomments" runat="server" TextMode="MultiLine" Height="276px" Width="689px"  style="opacity: 0.5;filter: alpha(opacity=50)" BorderColor="Black" BorderWidth="5" placeholder="Comments"></asp:TextBox>
 &nbsp;<br />
         <br />
-        <asp:Button ID="btnsend" runat="server" OnClick="btnsend_Click" Text="Send"  class="buttonclass" />
+            <asp:ImageButton ID="ImageButtonsend" runat="Server" 
+       AlternateText="Click to lock record" ImageUrl="~/images/send.logo.png"  
+       OnClick="btnimagesend_Click" Height="62px" Width="128px" onclientclick="document.forms[1].target ='_blank';"  />
 &nbsp;&nbsp;&nbsp;
         <asp:Label ID="commentdisplay" runat="server"></asp:Label>
             <br />
@@ -261,16 +287,15 @@ runat="server" text="Facebook" class="buttonclass"  />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="lbarrival1" runat="server" Text="arrival time of Ambulences"></asp:Label>
             </p>
-                <p style="margin-left: 40px">
-
+        <p>
         <asp:Label ID="Lb6" runat="server" 
-  Text="..........................................................................................................................................................................................."></asp:Label>
+  Text="................................................................................................................................................................................................."></asp:Label>    
+            </p>
                                         </div>
                 </p>
     <div>
 <fieldset style ="width:341px;">
-    <legend>Count site visited and Online users</legend>   
-        Site Visited:&nbsp;&nbsp;&nbsp;   
+    <legend>Site Visited:&nbsp;&nbsp;&nbsp;   
         <asp:Label ID="lblSiteVisited" runat="server" Text=""
             style="color: #FFFFFF; background-color: #3366FF"></asp:Label><br />
         Date:
@@ -284,6 +309,8 @@ runat="server" text="Facebook" class="buttonclass"  />
         </fieldset>
         </div>
     </form>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 </body>
 
 </html>

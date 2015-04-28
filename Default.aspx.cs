@@ -78,14 +78,7 @@ public partial class _Default : System.Web.UI.Page
       Button10.Font.Size = FontUnit.Medium;
          btncontact.Font.Size = FontUnit.Medium;
       btnchat.Font.Size = FontUnit.Medium;
-          Button2.Font.Size = FontUnit.Medium;
-        btntwitter.Font.Size = FontUnit.Medium;
-         btngoogle.Font.Size = FontUnit.Medium;
-        Button6.Font.Size = FontUnit.Medium;
-       Button7.Font.Size = FontUnit.Medium;
-       btnsend.Font.Size = FontUnit.Medium;
-      btnLocation.Font.Size = FontUnit.Medium;
-      btnfb.Font.Size = FontUnit.Medium;
+  
 
         fromemail.ForeColor = System.Drawing.Color.Black;
         fromemail.Font.Size = FontUnit.Medium;
@@ -137,43 +130,8 @@ public partial class _Default : System.Web.UI.Page
         Server.Transfer("Registration.aspx", true);
     }
  
-    protected void btnNewTab_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("https://www.facebook.com/pages/Emergency-Rescue-app/684092021697287?ref=ts&fref=ts");
-        
-    }
-    protected void btnsend_Click(object sender, EventArgs e)
-    {
-        if (fromemail.Text == String.Empty || TBNAME.Text == String.Empty || TBNUMBER.Text == String.Empty || fromcomments.Text == String.Empty)
-        {
-            commentdisplay.Text = "Please Fill All Fields ";
-        }
-        else
-        {
-        try
-        {
-
-            SendMail();
-            commentdisplay.Text = "Your Comments after sending the mail";
-            commentdisplay.Visible = true;
-            subject = "";
-            fromemail.Text = "";
-            fromcomments.Text = "";
-            TBNAME.Text = "";
-            TBNUMBER.Text = "";
-            commentdisplay.ForeColor = System.Drawing.Color.Green;////COLOUR
-
-            commentdisplay.Text = "Message Sended ";
-           // abc();
-        }
-        catch (Exception ex)
-        {
-            commentdisplay.ForeColor = System.Drawing.Color.Red;////COLOUR
-            commentdisplay.Text = "You Failed! "+ex.Message;
-
-        }
-        }
-    }
+ 
+ 
     protected void SendMail()
     {
          fromAddress = fromemail.Text.ToString();
@@ -234,16 +192,9 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-    protected void btntwitter_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("https://twitter.com/pashapapp");
-    }
+ 
 
-    protected void btngoogle_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("https://plus.google.com/u/0/b/105199438247747560056/105199438247747560056/about");
-
-    }
+ 
     protected void Offers_Click(object sender, EventArgs e)
     {
         if (PnlMain.Visible == false)
@@ -323,13 +274,68 @@ public partial class _Default : System.Web.UI.Page
             PnlMain.Visible = false;
         }
     }
-    protected void Button2_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("https://play.google.com/store?hl=en");
-    }
-
+ 
     protected void btnClearSesson_Click(object sender, EventArgs e)
     {
         Session.Abandon();
+    }
+    protected void btnLock_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("https://www.facebook.com/pages/Emergency-Rescue-app/684092021697287?ref=ts&fref=ts");
+    }
+    protected void btntreet_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("https://twitter.com/pashapapp");
+    }
+    protected void btngoogleplus_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("https://plus.google.com/u/0/b/105199438247747560056/105199438247747560056/about");
+    }
+
+    protected void btninstagram_Click(object sender, ImageClickEventArgs e)
+    {
+
+    }
+    protected void btnlinkedin_Click(object sender, ImageClickEventArgs e)
+    {
+
+    }
+
+
+    protected void btngoogleplay_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("https://play.google.com/store?hl=en");
+    }
+    protected void btnimagesend_Click(object sender, ImageClickEventArgs e)
+    {
+        if (fromemail.Text == String.Empty || TBNAME.Text == String.Empty || TBNUMBER.Text == String.Empty || fromcomments.Text == String.Empty)
+        {
+            commentdisplay.Text = "Please Fill All Fields ";
+        }
+        else
+        {
+            try
+            {
+
+                SendMail();
+                commentdisplay.Text = "Your Comments after sending the mail";
+                commentdisplay.Visible = true;
+                subject = "";
+                fromemail.Text = "";
+                fromcomments.Text = "";
+                TBNAME.Text = "";
+                TBNUMBER.Text = "";
+                commentdisplay.ForeColor = System.Drawing.Color.Green;////COLOUR
+
+                commentdisplay.Text = "Message Sended ";
+                // abc();
+            }
+            catch (Exception ex)
+            {
+                commentdisplay.ForeColor = System.Drawing.Color.Red;////COLOUR
+                commentdisplay.Text = "You Failed! " + ex.Message;
+
+            }
+        }
     }
 }
