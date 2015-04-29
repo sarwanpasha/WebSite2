@@ -31,6 +31,8 @@ public partial class _Default : System.Web.UI.Page
         Lb9.ForeColor = System.Drawing.Color.White;
         lbwho.ForeColor = System.Drawing.Color.White;
         commentdisplay.ForeColor = System.Drawing.Color.Red;
+       // PnlMain.BackColor = System.Drawing.Color.Black;
+        //PnlMain.ForeColor = System.Drawing.Color.White;
      //   lbviews.BackColor = System.Drawing.Color.White; 
 
       //  lbemail.ForeColor = System.Drawing.Color.Green; 
@@ -39,8 +41,8 @@ public partial class _Default : System.Web.UI.Page
        // lbcomments.ForeColor = System.Drawing.Color.Green; 
         //lbcomments.BackColor = System.Drawing.Color.White;
 
-        LbTech.Font.Size = FontUnit.XLarge; 
-        LbPost.Font.Size = FontUnit.XLarge;
+       // LbTech.Font.Size = FontUnit.XLarge; 
+      //  LbPost.Font.Size = FontUnit.XLarge;
         LbArrival.Font.Size = FontUnit.XXLarge;
         LbJoin.Font.Size = FontUnit.XXLarge;
         lbviews.Font.Size = FontUnit.XXLarge;
@@ -71,14 +73,20 @@ public partial class _Default : System.Web.UI.Page
         Lb9.Font.Size = FontUnit.XLarge;
 
 
-        btnpost.Font.Size = FontUnit.Medium;
-       btnout.Font.Size = FontUnit.Medium;
-       Offers.Font.Size = FontUnit.Medium;
-      Button9.Font.Size = FontUnit.Medium;
-      Button10.Font.Size = FontUnit.Medium;
-         btncontact.Font.Size = FontUnit.Medium;
-      btnchat.Font.Size = FontUnit.Medium;
-  
+      //  btnpost.Font.Size = FontUnit.Medium;
+        btnout.Font.Size = FontUnit.Medium;
+        Offers.Font.Size = FontUnit.Medium;
+        Button9.Font.Size = FontUnit.Medium;
+        Button10.Font.Size = FontUnit.Medium;
+        btncontact.Font.Size = FontUnit.Medium;
+        btnchat.Font.Size = FontUnit.Medium;
+
+        LbTech.Visible = false;
+        LbPost.Visible = false;
+        tbpost.Visible = false;
+        btnpost.Visible = false;
+        theDiv.Visible = false;
+
 
         fromemail.ForeColor = System.Drawing.Color.Black;
         fromemail.Font.Size = FontUnit.Medium;
@@ -117,6 +125,13 @@ public partial class _Default : System.Web.UI.Page
             lbname.ForeColor = System.Drawing.Color.Green;////COLOUR
             lbname.Text = Session["name"].ToString();
             Session.Remove("name");
+            if (lbname.Text=="sarwanpasha@gmail.com")
+            {
+                LbTech.Visible = true;
+                LbPost.Visible = true;
+                tbpost.Visible = true;
+                btnpost.Visible = true;
+            }
            // Button1.Visible = false;
             btnout.Visible = true;
         }
@@ -197,16 +212,22 @@ public partial class _Default : System.Web.UI.Page
  
     protected void Offers_Click(object sender, EventArgs e)
     {
-        if (PnlMain.Visible == false)
+        Offers.BackColor = System.Drawing.Color.Brown;
+        Button9.BackColor = System.Drawing.Color.White;
+        Button10.BackColor = System.Drawing.Color.White;
+        btncontact.BackColor = System.Drawing.Color.White;
+        if (theDiv.Visible == false)
         {
-            PnlMain.Visible = true;
+            theDiv.Visible = true;
             // PnlMain.Controls.Add(contactText);
-            PnlMain.Controls.Add(new LiteralControl("Offers"));
+          //  PnlMain.Controls.Add(new LiteralControl("Offers"));
+           // theDiv.Text = "Offers";
         }
-        else if (PnlMain.Visible == true)
+        else if (theDiv.Visible == true)
         {
-            PnlMain.Visible = false;
-        }
+       //  PnlMain.Visible = false;
+          //  theDiv.Text = "Offers";
+       }
     }
     protected void btnchat_Click(object sender, EventArgs e)
     {
@@ -238,41 +259,60 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void Button11_Click(object sender, EventArgs e)
     {
-        if (PnlMain.Visible == false)
+        Offers.BackColor = System.Drawing.Color.White;
+        Button9.BackColor = System.Drawing.Color.White;
+        Button10.BackColor = System.Drawing.Color.White;
+        btncontact.BackColor = System.Drawing.Color.Brown;
+        if (theDiv.Visible == false)
         {
-        PnlMain.Visible = true;
+            theDiv.Visible = true;
        // PnlMain.Controls.Add(contactText);
-      PnlMain.Controls.Add(new LiteralControl(contactText));
+     // PnlMain.Controls.Add(new LiteralControl(contactText));
+      //  PnlMain.Text = contactText;
        }
-       else if(PnlMain.Visible == true){
-           PnlMain.Visible = false;
-       }
+        else if (theDiv.Visible == true)
+        {
+      // PnlMain.Visible = false;
+       //  PnlMain.Text = contactText;
+      }
     }
     protected void Button10_Click(object sender, EventArgs e)
     {
-        if (PnlMain.Visible == false)
+        Offers.BackColor = System.Drawing.Color.White;
+        Button9.BackColor = System.Drawing.Color.White;
+        Button10.BackColor = System.Drawing.Color.Brown;
+        btncontact.BackColor = System.Drawing.Color.White;
+        if (theDiv.Visible == false)
         {
-            PnlMain.Visible = true;
+            theDiv.Visible = true;
             // PnlMain.Controls.Add(contactText);
-            PnlMain.Controls.Add(new LiteralControl("Blog"));
+          //  PnlMain.Controls.Add(new LiteralControl("Blog"));
+        //    PnlMain.Text = "Blog";
         }
-        else if (PnlMain.Visible == true)
-        {
-            PnlMain.Visible = false;
-        }
+        else if (theDiv.Visible == true)
+      {
+        //  PnlMain.Visible = false;
+        //  PnlMain.Text = "Blog";
+      }
     }
     protected void Button9_Click(object sender, EventArgs e)
     {
-        if (PnlMain.Visible == false)
+        Offers.BackColor = System.Drawing.Color.White;
+        Button9.BackColor = System.Drawing.Color.Brown;
+        Button10.BackColor = System.Drawing.Color.White;
+        btncontact.BackColor = System.Drawing.Color.White;
+        if (theDiv.Visible == false)
         {
-            PnlMain.Visible = true;
+            theDiv.Visible = true;
             // PnlMain.Controls.Add(contactText);
-            PnlMain.Controls.Add(new LiteralControl("Working"));
+          //  PnlMain.Controls.Add(new LiteralControl("Working"));
+          //  PnlMain.Text = "Working";
         }
-        else if (PnlMain.Visible == true)
-        {
-            PnlMain.Visible = false;
-        }
+        else if (theDiv.Visible == true)
+       {
+         // PnlMain.Visible = false;
+          // PnlMain.Text = "Working";
+      }
     }
  
     protected void btnClearSesson_Click(object sender, EventArgs e)
