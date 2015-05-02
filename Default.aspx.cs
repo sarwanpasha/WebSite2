@@ -20,7 +20,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //logIn.Visible = false;
+       // Page.MaintainScrollPositionOnPostBack = true;
 
         lbviews.ForeColor = System.Drawing.Color.Black;
         LbArrival.ForeColor = System.Drawing.Color.White;
@@ -31,6 +31,10 @@ public partial class _Default : System.Web.UI.Page
         Lb9.ForeColor = System.Drawing.Color.White;
         lbwho.ForeColor = System.Drawing.Color.White;
         commentdisplay.ForeColor = System.Drawing.Color.Red;
+        Lbvisited.ForeColor = System.Drawing.Color.White;
+        Lbdate.ForeColor = System.Drawing.Color.White;
+        LbLocation.ForeColor = System.Drawing.Color.Red;
+
        // PnlMain.BackColor = System.Drawing.Color.Black;
         //PnlMain.ForeColor = System.Drawing.Color.White;
      //   lbviews.BackColor = System.Drawing.Color.White; 
@@ -204,6 +208,7 @@ public partial class _Default : System.Web.UI.Page
     protected void btnLocation_Click(object sender, EventArgs e)
     {
         Server.Transfer("currentLocation.html", true);
+        
 
     }
 
@@ -216,6 +221,7 @@ public partial class _Default : System.Web.UI.Page
         Button9.BackColor = System.Drawing.Color.White;
         Button10.BackColor = System.Drawing.Color.White;
         btncontact.BackColor = System.Drawing.Color.White;
+        
         if (theDiv.Visible == false)
         {
             theDiv.Visible = true;
@@ -334,11 +340,11 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btninstagram_Click(object sender, ImageClickEventArgs e)
     {
-
+        Response.Redirect("https://instagram.com/");
     }
     protected void btnlinkedin_Click(object sender, ImageClickEventArgs e)
     {
-
+        Response.Redirect("https://www.linkedin.com/hp/?dnr=8OQ5pnI-ea6olz7PVOJZD0kcv564gBXcwkvs&trk=nav_responsive_tab_home");
     }
 
 

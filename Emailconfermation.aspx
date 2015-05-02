@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+                <link rel="SHORTCUT ICON" href="images/5.5.jpg">
+    <title>Confermation</title>
 </head>
 <body>
     <form id="form1" runat="server">

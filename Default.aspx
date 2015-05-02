@@ -1,8 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" MaintainScrollPositionOnPostback="true" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+                <link rel="SHORTCUT ICON" href="images/5.5.jpg">
   <title>Emergency Rescue App</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <style type="text/css">
+
 .buttonclass
 {
 padding-left: 10px;
@@ -172,7 +174,27 @@ background-color:grey;
 #slider: hover li,
 #slider: hover .progress-bar {
    animation-play-state: paused;
+
+   #container {
+    width: 100px;
+    height: 100px;
+    position: relative;
 }
+
+#navi, 
+#infoi {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100;
+    left: 100;
+}
+
+#infoi {
+    z-index: 10;
+}
+}
+
 </style>
     <style type="text/css">
         #Text1 {
@@ -184,6 +206,21 @@ background-color:grey;
             width: 424px;
         }
     </style>
+    <script type="text/javascript">
+        $(function () {
+            var f = $("#<%=hfPosition.ClientID%>");
+        window.onload = function () {
+            var position = parseInt(f.val());
+            if (!isNaN(position)) {
+                $(window).scrollTop(position);
+            }
+        };
+        window.onscroll = function () {
+            var position = $(window).scrollTop();
+            f.val(position);
+        };
+    });
+</script>
 </head>
  
 <body style="background-image:url(images/image_7.1.jpg)">
@@ -208,7 +245,8 @@ background-color:grey;
 </nav>
 <form id="form1" runat="server" >
     <div>        
-           
+           <asp:HiddenField runat="server" ID="hfPosition" Value="" />
+
                 <div style="background-image:url(images/design6.jpg)">
                    
       <h1 style="color:brown;"">
@@ -243,27 +281,27 @@ background-color:grey;
          <ul>
          <li id="first" class="firstanimation">  <!-- ID for tooltip and class for animation -->
          <a href="#"> <img src="images/1.1.jpg" alt="Cougar"/> </a>
-         <div class="tooltip"> <h1>Cougar</h1> </div>
+         <div class="tooltip"> <h1></h1> </div>
          </li>
 
          <li id="second" class="secondanimation">
          <a href="#"> <img src="images/2.2.jpg" alt="Lions"/> </a>
-         <div class="tooltip"> <h1>Lions</h1> </div>
+         <div class="tooltip"> <h1></h1> </div>
          </li>
 
          <li id="third" class="thirdanimation">
          <a href="#"> <img src="images/3.3.jpg" alt="Snowalker"/> </a>
-         <div class="tooltip"> <h1>Snowalker</h1> </div>
+         <div class="tooltip"> <h1></h1> </div>
          </li>
 
          <li id="fourth" class="fourthanimation">
          <a href="#"> <img src="images/4.4.jpg" alt="Howling"/> </a>
-         <div class="tooltip"> <h1>Howling</h1> </div>
+         <div class="tooltip"> <h1></h1> </div>
          </li>
 
          <li id="fifth" class="fifthanimation">
          <a href="#"> <img src="images/5.5.jpg" alt="Sunbathing"/> </a>
-         <div class="tooltip"> <h1>Sunbathing</h1> </div>
+         <div class="tooltip"> <h1></h1> </div>
          </li>
          </ul>
 
@@ -305,37 +343,57 @@ background-color:grey;
              
             <p id="aa">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <asp:Button ID="Offers" runat="server" OnClick="Offers_Click" Text="What We Offer"  class="buttonclass"/>
+               <asp:Button ID="Offers" runat="server" OnClick="Offers_Click" Text="What We Offer"  class="buttonclass" onmouseover="bigImg(this)" onmouseout="normalImg(this)"/>
+                    <script>
+                        function bigImg(x) {
+                            //    x.style.height = "64px";
+                            //   x.style.width = "64px";
+                            document.getElementById("theDiv").style.visibility = "hidden";
+                        }
+
+                        function normalImg(x) {
+                            //  x.style.height = "32px";
+                            // x.style.width = "32px";
+                            document.getElementById("theDiv").style.visibility = "visible";
+                        }
+                        </script>
+ <style>
+p.pos_fixed {
+    position: fixed;
+    top: 980px;
+    right: 500px;
+    color: red;
+}
+</style>
             &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button9" runat="server" Text="How IT Works" OnClick="Button9_Click"  class="buttonclass" />
+            <asp:Button ID="Button9" runat="server" Text="How IT Works" OnClick="Button9_Click"  class="buttonclass" onmouseover="bigImg(this)" onmouseout="normalImg(this)"/>
             &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button10" runat="server" Text="Blog" OnClick="Button10_Click" class="buttonclass"  />
+            <asp:Button ID="Button10" runat="server" Text="Blog" OnClick="Button10_Click" class="buttonclass"  onmouseover="bigImg(this)" onmouseout="normalImg(this)"/>
             &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btncontact" runat="server" Text="Contact" OnClick="Button11_Click"  class="buttonclass" />
+            <asp:Button ID="btncontact" runat="server" Text="Contact" OnClick="Button11_Click"  class="buttonclass" onmouseover="bigImg(this)" onmouseout="normalImg(this)" />
                <aa  style="background-color:red;">
         </p>
-            <p>
+            
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-<div runat="server" id="theDiv">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img  src="images/circle.logo.png" alt="Sample Photo" style="height: 348px; width: 384px" />
+
+        <div id="theDiv" runat="server" style="height: 330px; width: 374px; left:100px" class="pos_fixed">
+             <img src="images/circle2.logo.png" alt="Lions" style="height: 330px; width: 374px"/>
         </div>
-                </p>
-            </p>
+                 
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnchat" OnClick="btnchat_Click" onclientclick="document.forms[0].target ='_blank';" 
               runat="server" Text="Chat Room" class="buttonclass" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-           <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+         
 &nbsp;
 
         <asp:Label ID="Lb9" runat="server" 
              Text="................................................................................................................................................................................................"></asp:Label> 
     
-                </p>
-           <p>
-               &nbsp;</p>
+               
        <p>
            </div>
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -458,6 +516,8 @@ background-color:grey;
             <br />
             <asp:Label ID="lattitude" runat="server"></asp:Label>
     </div>
+ 
+    
     <p style="margin-left: 40px">
 <div style="background-color: white">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -491,12 +551,16 @@ background-color:grey;
             </p>
                                         </div>
                 </p>
-    <div>
+    <div style="background-image:url(images/contact4.png)">
 <fieldset style ="width:341px;">
-    <legend>Site Visited:&nbsp;&nbsp;&nbsp;   
-        <asp:Label ID="lblSiteVisited" runat="server" Text=""
+    <legend>
+        <asp:Label ID="Lbvisited" runat="server" Text="Site Visited"></asp:Label>
+&nbsp;<asp:Label ID="lblSiteVisited" runat="server" Text=""
             style="color: #FFFFFF; background-color: #3366FF"></asp:Label><br />
-        Date:
+           <asp:Label ID="Lbdate" runat="server" Text="Date"></asp:Label>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
         <asp:Label ID="lblOnlineUsers" runat="server" Text=""
             style="color: #FFFFFF; background-color: #009933"></asp:Label><br />
        

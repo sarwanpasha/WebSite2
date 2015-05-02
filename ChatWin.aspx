@@ -2,6 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
 	<HEAD>
+                    <link rel="SHORTCUT ICON" href="images/5.5.jpg">
 		<title>ChatWin</title>
 		<meta name="GENERATOR" Content="Microsoft Visual Studio .NET 7.1">
 		<meta name="CODE_LANGUAGE" Content="C#">
