@@ -33,7 +33,16 @@ public partial class _Default : System.Web.UI.Page
         commentdisplay.ForeColor = System.Drawing.Color.Red;
         Lbvisited.ForeColor = System.Drawing.Color.White;
         Lbdate.ForeColor = System.Drawing.Color.White;
-        LbLocation.ForeColor = System.Drawing.Color.Red;
+
+        Lb5.ForeColor = System.Drawing.Color.White;
+        LbLocation.ForeColor = System.Drawing.Color.White;
+        LbAbout.ForeColor = System.Drawing.Color.White;
+        LbUet.ForeColor = System.Drawing.Color.White;
+        LbPurpose.ForeColor = System.Drawing.Color.White;
+        lbcopy.ForeColor = System.Drawing.Color.White;
+        LbNumber.ForeColor = System.Drawing.Color.White;
+        lbarrival1.ForeColor = System.Drawing.Color.White;
+        Lb6.ForeColor = System.Drawing.Color.White;
 
        // PnlMain.BackColor = System.Drawing.Color.Black;
         //PnlMain.ForeColor = System.Drawing.Color.White;
