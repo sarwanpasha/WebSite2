@@ -37,10 +37,9 @@ public partial class Registration : System.Web.UI.Page
         Lb6.Font.Size = FontUnit.XLarge;
         Lb7.Font.Size = FontUnit.XLarge;
 
-    }
- 
+        secondstrip.Visible = false;
 
- 
+    }
 
     private void SendActivationEmail(int userId)
     {
@@ -99,6 +98,8 @@ public partial class Registration : System.Web.UI.Page
         {
             Label1.ForeColor = System.Drawing.Color.Red;
             Label1.Text = "Please Fill All Fields";
+
+            secondstrip.Visible = true;
         }
 
         else
