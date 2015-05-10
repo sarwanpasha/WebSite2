@@ -6,6 +6,24 @@
 <head runat="server">
             <link rel="SHORTCUT ICON" href="images/5.5.jpg">
     <title>Login</title>
+        <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() != 0) {
+                $('#backtotop').fadeIn();
+            } else {
+                $('#backtotop').fadeOut();
+            }
+        });
+
+        $('#backtotop').click(function () {
+            $('body,html').animate({ scrollTop: 0 }, 800);
+        });
+    });
+</script>
         <style type="text/css">
 .buttonclass
 {
@@ -15,6 +33,59 @@ padding-left: 10px;
 {
 color: white;
 background-color:grey;
+}
+#content{
+	margin : 20px auto 20px auto;
+	padding	: 20px;
+	border : 1px solid #333;
+	width : 900px;
+	height	: auto;
+	background : #FFF;
+	position : relative;
+	text-align : left;
+}
+
+p{
+	margin : 0px 0px 0px 0px;
+	padding	: 5px 0px 10px 0px;
+	line-height : 1.6em;
+}
+
+h1{
+	margin : 0px 0px 0px 0px;
+	padding	: 5px 0px 10px 0px;
+	font-size : 30px;
+	font-weight : normal;
+}
+
+#backtotop {
+	cursor : pointer;
+	display : none;
+	margin : 0px 0px 0px 370px;
+	position : fixed;
+	bottom : 10px;
+	font-size : 90%;
+	padding	: 10px;
+	width : 100px;
+	text-align : center;
+	background-color : #000;
+	border-radius : 8px;
+	-webkit-border-radius : 8px;
+	-moz-border-radius : 8px;
+	filter : alpha(opacity=60);
+	-khtml-opacity : 0.6;
+	-moz-opacity : 0.6;
+	opacity	: 0.6;
+	color : #FFF;
+	font-size : 14px;
+	z-index	: 1000;
+}
+#backtotop:hover
+{
+	filter : alpha(opacity=90);
+	-khtml-opacity : 0.9;
+	-moz-opacity : 0.9;
+	opacity	: 0.9;
 }
 </style>
           <meta charset="utf-8">
@@ -42,6 +113,7 @@ background-color:grey;
     </div>
   </div>
 </nav>
+            <div id="backtotop">Scroll to Top</div>
     <h1 style="color:brown;"">
         &nbsp;</h1>
         <h1 style="color:brown;"">
