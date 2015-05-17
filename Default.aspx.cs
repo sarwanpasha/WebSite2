@@ -12,12 +12,7 @@ using System.IO;
 public partial class _Default : System.Web.UI.Page
 {
     public bool log = true;
-    String toAddress, fromAddress, subject, body, fromPassword, comments,currentLocation;
-    bool techstatus = true;
-    bool confermation=false;
-    int techId =1;
-    String contactText = "Contacts:\n\nEmergency Rescue App Contacts:\n\n UET Peshawarr";
-
+    String toAddress, fromAddress, subject, body, fromPassword, comments;
     protected void Page_Load(object sender, EventArgs e)
     {
        // Page.MaintainScrollPositionOnPostBack = true;
@@ -44,25 +39,10 @@ public partial class _Default : System.Web.UI.Page
         lbarrival1.ForeColor = System.Drawing.Color.White;
         Lb6.ForeColor = System.Drawing.Color.White;
 
-       // PnlMain.BackColor = System.Drawing.Color.Black;
-        //PnlMain.ForeColor = System.Drawing.Color.White;
-     //   lbviews.BackColor = System.Drawing.Color.White; 
-
-      //  lbemail.ForeColor = System.Drawing.Color.Green; 
-      //  lbemail.BackColor = System.Drawing.Color.White; 
-
-       // lbcomments.ForeColor = System.Drawing.Color.Green; 
-        //lbcomments.BackColor = System.Drawing.Color.White;
-
-       // LbTech.Font.Size = FontUnit.XLarge; 
-      //  LbPost.Font.Size = FontUnit.XLarge;
         LbArrival.Font.Size = FontUnit.XXLarge;
         LbJoin.Font.Size = FontUnit.XXLarge;
         lbviews.Font.Size = FontUnit.XXLarge;
         lbwho.Font.Size = FontUnit.XXLarge;
-     //   lbemail.Font.Size = FontUnit.XLarge;
-      //  lbcomments.Font.Size = FontUnit.XLarge;
-
 
         LbLocation.Font.Size = FontUnit.Large;
         LbUet.Font.Size = FontUnit.Large;
@@ -75,7 +55,6 @@ public partial class _Default : System.Web.UI.Page
 
 
         lblAnything.Font.Size = FontUnit.XLarge;
-       // Lb1.Font.Size = FontUnit.XLarge;
         Lb2.Font.Size = FontUnit.XLarge;
         Lb3.Font.Size = FontUnit.XLarge;
         Lb4.Font.Size = FontUnit.XLarge;
@@ -85,8 +64,6 @@ public partial class _Default : System.Web.UI.Page
         Lb8.Font.Size = FontUnit.XLarge;
         Lb9.Font.Size = FontUnit.XLarge;
 
-
-      //  btnpost.Font.Size = FontUnit.Medium;
         btnout.Font.Size = FontUnit.Medium;
         Offers.Font.Size = FontUnit.Medium;
         Button9.Font.Size = FontUnit.Medium;
@@ -111,8 +88,6 @@ public partial class _Default : System.Web.UI.Page
         TBNUMBER.Font.Size = FontUnit.Medium;
         btnClearSesson.Visible = false;
         siteVisited();
-    //  fromcomments.Attributes.Add("onfocus", "this.select();");
-        // string NAME = Response.QueryString.GetValue(" NAME ");
         name();
      }
     public void siteVisited()
@@ -122,9 +97,6 @@ public partial class _Default : System.Web.UI.Page
             int UserCount = Convert.ToInt32(Application["OnlineUsers"]);
             lblSiteVisited.Text = UserCount.ToString();
             lblOnlineUsers.Text = Session["start"].ToString();
-
-          //  lblSiteVisited.Text = "No of times my site visited=" + Application["SiteVisitedCounter"].ToString();
-          //  lblOnlineUsers.Text = "No of users online on my site=" + Application["OnlineUserCounter"].ToString();
         }
         catch (Exception ex)
         {
@@ -145,7 +117,6 @@ public partial class _Default : System.Web.UI.Page
                 tbpost.Visible = true;
                 btnpost.Visible = true;
             }
-           // Button1.Visible = false;
             btnout.Visible = true;
         }
         catch(Exception ex){

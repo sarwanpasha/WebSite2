@@ -381,6 +381,35 @@ h1{
 	opacity	: 0.9;
 }
     </style>
+    <style type="text/css">
+        video#bgvid {
+
+position: fixed;
+
+top: 50%;
+
+left: 50%;
+
+min-width: 100%;
+
+min-height: 50%;
+
+width: auto;
+
+height: auto;
+
+z-index: -100;
+
+-webkit-transform: translateX(-50%) translateY(-50%);
+
+transform: translateX(-50%) translateY(-50%);
+
+background: url(polina.jpg) no-repeat;
+
+background-size: cover;
+
+}
+    </style>
     <script type="text/javascript">
         $(function () {
             var f = $("#<%=hfPosition.ClientID%>");
@@ -427,8 +456,10 @@ h1{
             <div id="backtotop">Scroll to Top</div>
            <asp:HiddenField runat="server" ID="hfPosition" Value="" />
 
-              <div style="background-image:url(images/design6.jpg)"> 
- 
+              <div > 
+    	<video autoplay loop muted id="bgvid">
+<source src="videos/flowers.mp4" type="video/mp4"> 
+	</video>   
                    
    <!--   <h1 style="color:brown;"">
                                 &nbsp;Welcome To Emergency Rescue App!!&nbsp;&nbsp;&nbsp; <img src="images/cool.gif" alt="Lions"/>
@@ -447,19 +478,20 @@ h1{
         <asp:Button ID="btnpost" runat="server" Text="Post >>" OnClick="btnpost_Click" class="buttonclass"/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="lbname" runat="server"></asp:Label>
-          
+    
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnout" runat="server" OnClick="btnout_Click" Text="Sigout" Visible="False" onclientclick="document.forms[1].target ='_blank';" class="buttonclass"/>
     <svg width="1000"; height="100">
-  <text x="100" y="80" fill="none" stroke="brown" stroke-width="3" font-size="50"  stroke-dasharray="1000"
+  <text x="100" y="80" fill="none" stroke="White" stroke-width="3" font-size="50"  stroke-dasharray="1000"
   stroke-dashoffset="1000" >Welcome To Emergency Rescue App!!
   <animate attributeName="stroke-dashoffset"
     from="1000"
     to="0" 
     dur="20s"
       fill="freeze">
-      </animate> </text>
+      </animate> 
+  </text>
 </svg>      
 
 
