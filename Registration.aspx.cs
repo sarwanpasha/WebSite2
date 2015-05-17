@@ -27,7 +27,7 @@ public partial class Registration : System.Web.UI.Page
     String email;
     String city;
     bool status = false;
-   
+    bool q = true;   
     string display = "Pop-up!";
     string source = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\USERS\PASHA\DOCUMENTS\WEBSITE.MDF;Integrated Security=True";
  
@@ -43,23 +43,24 @@ public partial class Registration : System.Web.UI.Page
 
     private void SendActivationEmail(int userId)
     {
-
+        try
+        {
             //  string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
-          string activationCode = Guid.NewGuid().ToString();
-          using (SqlConnection con = new SqlConnection(source))
-           {
+            string activationCode = Guid.NewGuid().ToString();
+            using (SqlConnection con = new SqlConnection(source))
+            {
 
-               System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
-               cmd.CommandType = System.Data.CommandType.Text;
-               cmd.CommandText = ("UPDATE website1 SET status='true' WHERE EmailAdress=" + "'" + txtEmail.Text + "'and Password='" + txtPassword.Text + "'");
-               cmd.Connection = con;
-               con.Open();
-               cmd.ExecuteNonQuery();
-               con.Close();
-               // using (SqlCommand cmd = new SqlCommand("INSERT INTO website1 VALUES(@UserId, @ActivationCode)"))
-
-           }
-        using (MailMessage mm = new MailMessage("sarwanpasha@gmail.com", txtEmail.Text))
+                System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = ("UPDATE website1 SET status='true' WHERE EmailAdress=" + "'" + txtEmail.Text + "'and Password='" + txtPassword.Text + "'");
+                cmd.Connection = con;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                // using (SqlCommand cmd = new SqlCommand("INSERT INTO website1 VALUES(@UserId, @ActivationCode)"))
+ 
+            }
+            using (MailMessage mm = new MailMessage("sarwanpasha@gmail.com", txtEmail.Text))
             {
                 mm.Subject = "Account Activation";
                 string body = "Hello " + txtEmail.Text.Trim() + ",";
@@ -76,7 +77,11 @@ public partial class Registration : System.Web.UI.Page
                 smtp.Credentials = NetworkCred;
                 smtp.Port = 587;
                 smtp.Send(mm);
-            }
+             }
+        }
+        catch(Exception q){
+            lbemail.Text = "Wrong!! "+q.Message;
+         }
 
     }
 
@@ -86,7 +91,7 @@ public partial class Registration : System.Web.UI.Page
     }
     protected void btnre_Click(object sender, ImageClickEventArgs e)
     {
-        Label1.Text = "Please wait...";
+       // Label1.Text = "Please wait...";
         int id = 1;
         userName = txtName.Text;
         lastName = txtLastName.Text;
@@ -123,18 +128,25 @@ public partial class Registration : System.Web.UI.Page
                     cmd.ExecuteNonQuery();
                     myConnection.Close();
 
-                    Label1.ForeColor = System.Drawing.Color.Green;////COLOUR
-                    Label1.Text = "Records are Submitted Successfully!" + " \n  Confermation Email has been sended to you!";
-
-                    // SendMail();  
                     SendActivationEmail(1);
 
-                    lbemail.Text = "Success Pasha!";
+                  //  Label1.ForeColor = System.Drawing.Color.Green;////COLOUR
+                   // Label1.Text = "Records are Submitted Successfully!" + " \n  Confermation Email has been sended to you!";
+                    // SendMail();  
+
+                  //  lbemail.Text = "Success Pasha!";
                 }
                 catch (SqlException ex)
                 {
                     Label1.ForeColor = System.Drawing.Color.Red;
                     Label1.Text = "You failed! " + ex.Message;
+                }
+                if(lbemail.Text=="Wrong!! The specified string is not in the form required for an e-mail address."){
+
+                }
+                else{
+                    Label1.ForeColor = System.Drawing.Color.Green;////COLOUR
+                    Label1.Text = "Records are Submitted Successfully!" + " \n  Confermation Email has been sended to you!";
                 }
             }
         }
