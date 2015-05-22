@@ -198,7 +198,6 @@ background-color:grey;
     height: 100px;
     position: relative;
 }
-
 #navi, 
 #infoi {
     width: 100%;
@@ -379,6 +378,10 @@ h1{
 	-khtml-opacity : 0.9;
 	-moz-opacity : 0.9;
 	opacity	: 0.9;
+}
+nav {
+opacity: 0.5;
+filter: alpha(opacity=50); 
 }
     </style>
     <style type="text/css">

@@ -11,9 +11,18 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+nav {
+opacity: 0.5;
+filter: alpha(opacity=50); 
+}
+ 
+    </style>
 </head>
 <body style="height: 476px">
     <form id="form1" runat="server" style="background-image:url('images/image_9.jpg'); height: 744px;">
+        <div >
                 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -31,6 +40,7 @@
     </div>
   </div>
 </nav>
+            </div>
     <div>
     
         <br />

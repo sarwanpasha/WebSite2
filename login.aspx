@@ -88,6 +88,13 @@ h1{
 	opacity	: 0.9;
 }
 </style>
+        <style type="text/css">
+nav {
+opacity: 0.5;
+filter: alpha(opacity=50); 
+}
+ 
+    </style>
           <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">

@@ -31,6 +31,14 @@ color: white;
 background-color:grey;
 }
 </style>
+
+        <style type="text/css">
+nav {
+opacity: 0.5;
+filter: alpha(opacity=50); 
+}
+ 
+    </style>
 </head>
 <body >
     <form id="form1" runat="server" style="background-image:url('images/image_8.jpg'); height: 719px;">

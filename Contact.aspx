@@ -11,8 +11,60 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <style type="text/css">
+nav {
+opacity: 0.5;
+filter: alpha(opacity=50); 
+}
+     body {
+      height: 600px;
+    }
+    .dot {
+      width: 2px;
+      height: 2px;
+      background-color: black;
+      position: absolute;
+    }
+    </style>
 </head>
 <body>
+    <script>
+        (function () {
+            "use strict";
+
+            document.onmousemove = handleMouseMove;
+            setInterval(getMousePosition, 100); // setInterval repeats every X ms
+            function handleMouseMove(event) {
+                var dot, eventDoc, doc, body, pageX, pageY;
+
+                event = event || window.event; // IE-ism
+
+                // If pageX/Y aren't available and clientX/Y
+                // are, calculate pageX/Y - logic taken from jQuery
+                // Calculate pageX/Y if missing and clientX/Y available
+                if (event.pageX == null && event.clientX != null) {
+                    eventDoc = (event.target && event.target.ownerDocument) || document;
+                    doc = eventDoc.documentElement;
+                    body = eventDoc.body;
+
+                    event.pageX = event.clientX +
+                      (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+                      (doc && doc.clientLeft || body && body.clientLeft || 0);
+                    event.pageY = event.clientY +
+                      (doc && doc.scrollTop || body && body.scrollTop || 0) -
+                      (doc && doc.clientTop || body && body.clientTop || 0);
+                }
+
+                // Add a dot to follow the cursor
+                dot = document.createElement('div');
+                dot.className = "dot";
+                dot.style.left = event.pageX + "px";
+                dot.style.top = event.pageY + "px";
+                document.body.appendChild(dot);
+            }
+        })();
+</script>
        <p>
            <br />
        </p>
