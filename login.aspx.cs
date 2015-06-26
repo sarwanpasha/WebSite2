@@ -44,9 +44,10 @@ public partial class login : System.Web.UI.Page
             //lbstatus.Text = "Please Activate Your account to login!";
 
             myConnection.Close();
-            return false;
+            return false; 
         }
     }
+
     protected void btnsubmit_Click(object sender, EventArgs e)
     {
         username = tbusername.Text;
@@ -72,7 +73,7 @@ public partial class login : System.Web.UI.Page
                     Server.Transfer("Default.aspx", true);
                 }
                 else{
-                    
+                    lbstatus.ForeColor = System.Drawing.Color.Red;////COLOUR
                     lbstatus.Text = "Please Activate Your account to login!";
                 }
 

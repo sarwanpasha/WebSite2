@@ -43,6 +43,13 @@ public partial class Registration : System.Web.UI.Page
 
     private void SendActivationEmail(int userId)
     {
+       string ActivationUrl;
+       string emailId;
+       string passwordd;
+      emailId = txtEmail.Text.Trim();
+      passwordd = txtPassword.Text.Trim();
+     // ActivationUrl = Server.HtmlEncode("http://localhost:1485/Emailconfermation.aspx?UserID=" + emailId + "/Password=" + passwordd);
+      ActivationUrl = Server.HtmlEncode("http://localhost:1485/Emailconfermation.aspx?UserID=" + emailId);
         try
         {
             //  string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
@@ -52,22 +59,19 @@ public partial class Registration : System.Web.UI.Page
 
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = ("UPDATE website1 SET status='true' WHERE EmailAdress=" + "'" + txtEmail.Text + "'and Password='" + txtPassword.Text + "'");
+                cmd.CommandText = ("UPDATE website1 SET status='false' WHERE EmailAdress=" + "'" + txtEmail.Text + "'and Password='" + txtPassword.Text + "'");
                 cmd.Connection = con;
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                // using (SqlCommand cmd = new SqlCommand("INSERT INTO website1 VALUES(@UserId, @ActivationCode)"))
  
             }
             using (MailMessage mm = new MailMessage("sarwanpasha@gmail.com", txtEmail.Text))
             {
                 mm.Subject = "Account Activation";
-                string body = "Hello " + txtEmail.Text.Trim() + ",";
-                body += "<br /><br />Please click the following link to activate your account";
-                body += "<br /><a href = '" + "http://localhost:1485/Emailconfermation.aspx" + "'>Click here to activate your account.</a>";
-                body += "<br /><br />Thanks";
-                mm.Body = body;
+              string body = "Hello " + txtEmail.Text.Trim() + ",";
+              body += "<br /><br />Please <a href='" + ActivationUrl + "'>click here to activate</a>  your account and enjoy our services. \nThanks!";
+               mm.Body = body;
                 mm.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
                 smtp.Host = "smtp.gmail.com";
@@ -89,6 +93,43 @@ public partial class Registration : System.Web.UI.Page
     {
 
     }
+    private string FetchUserId(string emailId)
+    {
+
+        SqlCommand cmd = new SqlCommand();
+        SqlConnection con = new SqlConnection(source);
+        cmd = new SqlCommand("SELECT status FROM website1 WHERE EmailAdress=" + "'" + txtEmail.Text + "'", con);
+        cmd.Parameters.AddWithValue(txtEmail.Text, emailId);
+        if (con.State == ConnectionState.Closed)
+        {
+            con.Open();
+        }
+        string UserID = Convert.ToString(cmd.ExecuteNonQuery());
+        con.Close();
+        cmd.Dispose();
+        return UserID;
+    }
+    public bool check()
+    {
+        String wq = "true";
+        SqlConnection myConnection = new SqlConnection(source);
+        myConnection.Open();
+        SqlCommand st = new SqlCommand("select EmailAdress from website1 where EmailAdress='" + txtEmail.Text + "'", myConnection);
+        SqlDataAdapter aad = new SqlDataAdapter(st);
+        DataTable td = new DataTable();
+        aad.Fill(td);
+        if (td.Rows.Count > 0)
+        {
+            return false;
+
+        }
+        else
+        {
+            myConnection.Close();
+            return true;
+        }
+    }
+    ////////////////////////////////////////////////////////////
     protected void btnre_Click(object sender, ImageClickEventArgs e)
     {
        // Label1.Text = "Please wait...";
@@ -99,12 +140,22 @@ public partial class Registration : System.Web.UI.Page
         city = txtCity.Text;
         password = txtPassword.Text;
         repeatpassword = txtRepeatPassword.Text;
+        bool emailcheck = false;
+        emailcheck = check();
         if (userName == String.Empty || lastName == String.Empty || password == String.Empty || repeatpassword == String.Empty || email == String.Empty || city == String.Empty)
         {
             Label1.ForeColor = System.Drawing.Color.Red;
             Label1.Text = "Please Fill All Fields";
 
             secondstrip.Visible = true;
+        }
+
+
+       else if (emailcheck==false)
+        {
+
+                Label1.ForeColor = System.Drawing.Color.Red;////COLOUR
+                Label1.Text = "Sorry, Account with this email is already been created";
         }
 
         else
@@ -127,14 +178,9 @@ public partial class Registration : System.Web.UI.Page
                     myConnection.Open();
                     cmd.ExecuteNonQuery();
                     myConnection.Close();
-
                     SendActivationEmail(1);
+                 //   confermation();
 
-                  //  Label1.ForeColor = System.Drawing.Color.Green;////COLOUR
-                   // Label1.Text = "Records are Submitted Successfully!" + " \n  Confermation Email has been sended to you!";
-                    // SendMail();  
-
-                  //  lbemail.Text = "Success Pasha!";
                 }
                 catch (SqlException ex)
                 {

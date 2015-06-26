@@ -22,6 +22,10 @@
         <br />
         <br />
         <asp:Label ID="lbconfermation" runat="server"></asp:Label>
+                <br />
+        <br />
+                <asp:Label ID="lbtest" runat="server"></asp:Label>
+
     
     </div>
     </form>
